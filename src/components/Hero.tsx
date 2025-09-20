@@ -28,11 +28,6 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl ml-auto mr-8 text-left">
 
-          {/* Main heading */}
-          <h1 className="font-heading font-bold text-4xl sm:text-6xl lg:text-7xl text-white mb-6 fade-in-delay-1">
-            Youssef Yasser
-          </h1>
-
           {/* Subtitle */}
           <p className="font-heading text-xl sm:text-2xl lg:text-3xl text-white/90 mb-4 fade-in-delay-2">
             UI/UX Designer & Mobile App Developer

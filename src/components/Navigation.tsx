@@ -45,7 +45,7 @@ const Navigation = () => {
             onClick={() => scrollToSection('#home')}
             className="font-heading font-bold text-xl text-primary hover:text-primary-light transition-colors"
           >
-            YY
+            Youssef Yasser
           </button>
 
           {/* Desktop Navigation */}
