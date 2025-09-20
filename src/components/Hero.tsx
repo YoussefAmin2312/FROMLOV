@@ -43,7 +43,7 @@ const Hero = () => {
             <Button
               onClick={() => scrollToSection('#projects')}
               size="lg"
-              className="bg-white text-primary hover:bg-white/90 hover:scale-105 transition-all duration-300 font-semibold px-8 py-3 text-lg shadow-lg"
+              className="bg-white/10 border-2 border-white text-white backdrop-blur-sm hover:bg-white/20 hover:scale-105 transition-all duration-300 font-semibold px-8 py-3 text-lg shadow-lg"
             >
               View My Work
             </Button>
@@ -51,7 +51,7 @@ const Hero = () => {
               onClick={() => scrollToSection('#contact')}
               variant="outline"
               size="lg"
-              className="border-2 border-white/30 text-white hover:bg-white/10 hover:scale-105 transition-all duration-300 font-semibold px-8 py-3 text-lg backdrop-blur-sm"
+              className="bg-white/10 border-2 border-white text-white backdrop-blur-sm hover:bg-white/20 hover:scale-105 transition-all duration-300 font-semibold px-8 py-3 text-lg shadow-lg"
             >
               Contact Me
             </Button>
