@@ -47,7 +47,7 @@ const Projects = () => {
   const handleProjectClick = (projectId: string) => {
     navigate(`/project/${projectId}`);
   };
-  return <section id="projects" className="py-20 bg-gradient-subtle">
+  return <section id="projects" className="py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">Work</h2>
@@ -58,7 +58,7 @@ const Projects = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => <div key={index} onClick={() => handleProjectClick(project.id)} className="group cursor-pointer overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+          {projects.map((project, index) => <div key={index} onClick={() => handleProjectClick(project.id)} className="group cursor-pointer overflow-hidden rounded-lg hover:scale-105 transition-all duration-300">
               <div className="relative">
                 <img src={project.image} alt={project.title} className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
@@ -68,7 +68,7 @@ const Projects = () => {
                   </span>
                 </div>
               </div>
-              <div className="p-6 bg-card">
+              <div className="p-6 bg-background/50 backdrop-blur-sm">
                 <h3 className="font-heading font-semibold text-xl text-foreground mb-2 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>

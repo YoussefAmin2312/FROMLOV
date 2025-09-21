@@ -9,7 +9,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-subtle">
+    <section id="about" className="py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
@@ -59,7 +59,7 @@ const About = () => {
             
             <div className="grid gap-4">
               {certifications.map((cert, index) => (
-                <Card key={index} className="hover-lift bg-gradient-card border-0 shadow-card">
+                <Card key={index} className="hover-lift bg-background/50 backdrop-blur-sm border-0">
                   <CardContent className="p-6">
                     <div className="flex items-center space-x-4">
                       <div className="bg-gradient-primary p-3 rounded-full">

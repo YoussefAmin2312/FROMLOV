@@ -75,7 +75,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-subtle">
+    <section id="contact" className="py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
@@ -103,7 +103,7 @@ const Contact = () => {
             {/* Contact Info Cards */}
             <div className="space-y-4">
               {contactInfo.map((info, index) => (
-                <Card key={index} className="hover-lift bg-gradient-card border-0 shadow-card">
+                <Card key={index} className="hover-lift bg-background/50 backdrop-blur-sm border-0">
                   <CardContent className="p-6">
                     <div className="flex items-center space-x-4">
                       <div className="bg-muted p-3 rounded-full">
@@ -149,7 +149,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <Card className="bg-gradient-card border-0 shadow-xl">
+          <Card className="bg-background/50 backdrop-blur-sm border-0">
             <CardContent className="p-8">
               <h3 className="font-heading font-semibold text-2xl text-foreground mb-6">
                 Send me a message
@@ -223,7 +223,7 @@ const Contact = () => {
                 </Button>
               </form>
 
-              <div className="mt-8 pt-6 border-t border-border text-center">
+              <div className="mt-8 pt-6 text-center">
                 <p className="text-sm text-muted-foreground">
                   Prefer email? Reach me directly at{' '}
                   <a 

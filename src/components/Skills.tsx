@@ -46,7 +46,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" ref={sectionRef} className="py-20 bg-gradient-subtle">
+    <section id="skills" ref={sectionRef} className="py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">
@@ -70,7 +70,7 @@ const Skills = () => {
             {designSkills.map((skill, index) => (
               <div 
                 key={skill}
-                className={`bg-background/50 backdrop-blur-sm border border-border rounded-xl p-4 text-center hover-scale transition-all duration-300 ${
+                className={`bg-background/30 backdrop-blur-sm rounded-xl p-4 text-center hover-scale transition-all duration-300 ${
                   isVisible ? 'animate-fade-in' : 'opacity-0'
                 }`}
                 style={{ 
@@ -97,7 +97,7 @@ const Skills = () => {
             {techSkills.map((skill, index) => (
               <div 
                 key={skill}
-                className={`bg-background/50 backdrop-blur-sm border border-border rounded-xl p-4 text-center hover-scale transition-all duration-300 ${
+                className={`bg-background/30 backdrop-blur-sm rounded-xl p-4 text-center hover-scale transition-all duration-300 ${
                   isVisible ? 'animate-fade-in' : 'opacity-0'
                 }`}
                 style={{ 
