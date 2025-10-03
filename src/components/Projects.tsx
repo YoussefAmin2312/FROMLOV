@@ -2,9 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import bookHeavenImg from '@/assets/book-heaven-project.jpg';
 import mendAiImg from '@/assets/mend-ai-project.jpg';
 import yogaSkincareImg from '@/assets/yoga-skincare-project.jpg';
-import cyberPhysicalImg from '@/assets/cyber-physical-project.jpg';
-import temperatureSensorImg from '@/assets/temperature-sensor-project.jpg';
-import portfolioWebsiteImg from '@/assets/portfolio-website-project.jpg';
 const Projects = () => {
   const navigate = useNavigate();
   const projects = [{
@@ -25,24 +22,6 @@ const Projects = () => {
     description: 'Wellness app focusing on facial yoga exercises',
     image: yogaSkincareImg,
     category: 'Wellness'
-  }, {
-    id: 'cyber-physical',
-    title: 'Cyber-Physical Systems',
-    description: 'Advanced autonomous vehicle simulation project',
-    image: cyberPhysicalImg,
-    category: 'Engineering'
-  }, {
-    id: 'temperature-sensor',
-    title: 'Digital Temperature Sensor',
-    description: 'IoT project using Arduino and DS18B20 sensor',
-    image: temperatureSensorImg,
-    category: 'IoT'
-  }, {
-    id: 'portfolio-website',
-    title: 'Portfolio Website',
-    description: 'Modern, responsive portfolio website',
-    image: portfolioWebsiteImg,
-    category: 'Web Development'
   }];
   const handleProjectClick = (projectId: string) => {
     navigate(`/project/${projectId}`);
@@ -92,7 +71,7 @@ const Projects = () => {
               <div className="hidden lg:flex flex-1 justify-center">
                 <button
                   onClick={() => handleProjectClick(project.id)}
-                  className="bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold text-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="bg-white/10 backdrop-blur-xl border border-white/20 text-foreground px-10 py-5 rounded-2xl font-semibold text-lg hover:bg-white/20 hover:border-white/30 transition-all duration-300 hover:scale-105 shadow-elegant hover:shadow-2xl"
                 >
                   View Case Study
                 </button>
