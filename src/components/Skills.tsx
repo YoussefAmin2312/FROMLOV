@@ -9,6 +9,7 @@ import flutterLogo from '@/assets/logos/flutter.svg';
 import firebaseLogo from '@/assets/logos/firebase.svg';
 import sqliteLogo from '@/assets/logos/sqlite.svg';
 import pythonLogo from '@/assets/logos/python.svg';
+import matlabLogo from '@/assets/logos/matlab.svg';
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,7 +52,7 @@ const Skills = () => {
     { name: 'Firebase', logo: firebaseLogo },
     { name: 'SQLite', logo: sqliteLogo },
     { name: 'Python', logo: pythonLogo },
-    { name: 'Matlab', icon: Terminal }
+    { name: 'Matlab', logo: matlabLogo }
   ];
 
   return (
@@ -111,11 +112,7 @@ const Skills = () => {
                   key={`${skill.name}-${index}`}
                   className="flex-shrink-0 bg-background/50 backdrop-blur-sm border border-border rounded-xl px-6 py-4 flex items-center gap-3 hover-scale transition-all duration-300"
                 >
-                  {'logo' in skill ? (
-                    <img src={skill.logo} alt={skill.name} className="w-6 h-6" />
-                  ) : (
-                    <skill.icon className="text-primary" size={24} />
-                  )}
+                  <img src={skill.logo} alt={skill.name} className="w-6 h-6" />
                   <span className="text-sm font-medium text-foreground whitespace-nowrap">
                     {skill.name}
                   </span>
