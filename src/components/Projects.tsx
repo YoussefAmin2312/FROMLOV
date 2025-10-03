@@ -57,32 +57,51 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => <div key={index} onClick={() => handleProjectClick(project.id)} className="group cursor-pointer overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-[1.02]">
-              <div className="relative h-80 overflow-hidden">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+        <div className="space-y-12 max-w-6xl mx-auto">
+          {projects.map((project, index) => (
+            <div 
+              key={index} 
+              className="group relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-primary/20 transition-all duration-700 animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="relative h-[500px] overflow-hidden">
+                {/* Large project image */}
+                <img 
+                  src={project.image} 
+                  alt={project.title} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" 
+                />
                 
-                {/* Gradient overlay - always visible but intensifies on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent group-hover:from-black/90 group-hover:via-black/60 transition-all duration-500"></div>
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent"></div>
                 
-                {/* Category badge */}
-                <div className="absolute top-4 right-4 z-10">
-                  <span className="bg-primary/90 backdrop-blur-sm text-primary-foreground px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wide">
-                    {project.category}
-                  </span>
-                </div>
-                
-                {/* Content overlay */}
-                <div className="absolute inset-0 flex flex-col justify-end p-6 z-10">
-                  <h3 className="font-heading font-bold text-2xl text-white mb-2 transform group-hover:translate-y-[-4px] transition-transform duration-300">
-                    {project.title}
-                  </h3>
-                  <p className="text-white/90 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
-                    {project.description}
-                  </p>
+                {/* Content on the left */}
+                <div className="absolute inset-0 flex items-center">
+                  <div className="px-8 sm:px-12 lg:px-16 max-w-2xl">
+                    <span className="inline-block bg-primary/90 backdrop-blur-sm text-primary-foreground px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+                      {project.category}
+                    </span>
+                    <h3 className="font-heading font-bold text-4xl sm:text-5xl text-white mb-4 transform group-hover:translate-x-2 transition-transform duration-500">
+                      {project.title}
+                    </h3>
+                    <p className="text-white/90 text-lg leading-relaxed mb-8 transform group-hover:translate-x-2 transition-transform duration-500 delay-75">
+                      {project.description}
+                    </p>
+                  </div>
+                  
+                  {/* Display Case Study button on the right */}
+                  <div className="absolute right-8 sm:right-12 lg:right-16">
+                    <button
+                      onClick={() => handleProjectClick(project.id)}
+                      className="bg-white/10 backdrop-blur-md text-white border-2 border-white/30 px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-primary hover:border-white transition-all duration-300 hover:scale-105 shadow-xl hover:shadow-2xl"
+                    >
+                      Display Case Study
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>)}
+            </div>
+          ))}
         </div>
       </div>
     </section>;
