@@ -43,13 +43,13 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <button onClick={() => scrollToSection('#home')} className="font-heading font-bold text-xl transition-colors text-slate-50">
+          <button onClick={() => scrollToSection('#home')} className={`font-heading font-bold text-xl transition-colors ${isScrolled ? 'text-foreground' : 'text-slate-50'}`}>
             Youssef Yasser
           </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map(item => <button key={item.label} onClick={() => scrollToSection(item.href)} className="transition-colors font-medium relative group text-slate-50">
+            {navItems.map(item => <button key={item.label} onClick={() => scrollToSection(item.href)} className={`transition-colors font-medium relative group ${isScrolled ? 'text-foreground hover:text-primary' : 'text-slate-50'}`}>
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </button>)}
