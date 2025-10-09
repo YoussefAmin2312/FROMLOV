@@ -325,35 +325,109 @@ const ProjectCaseStudy = () => {
             {/* Research */}
             <section>
               <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
-                Research
+                UX Research
               </h2>
               
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-semibold text-xl text-foreground mb-3">Methods</h3>
-                  <ul className="space-y-2">
-                    {project.research.methods.map((method, index) => (
-                      <li key={index} className="flex items-start space-x-3">
-                        <Lightbulb className="text-primary mt-1 flex-shrink-0" size={18} />
-                        <span className="text-muted-foreground">{method}</span>
-                      </li>
-                    ))}
-                  </ul>
+              <div className="space-y-8">
+                {/* Framework Introduction */}
+                <div className="bg-muted/50 rounded-lg p-6 border border-border">
+                  <p className="text-muted-foreground leading-relaxed">
+                    I structured my process using the <span className="font-semibold text-foreground">Double Diamond framework</span>, which separates the design journey into exploring the problem space and then shaping the solution space.
+                  </p>
                 </div>
 
-                <div>
-                  <h3 className="font-semibold text-xl text-foreground mb-3">Key Findings</h3>
-                  <ul className="space-y-2">
-                    {project.research.findings.map((finding, index) => (
-                      <li key={index} className="flex items-start space-x-3">
-                        <Target className="text-primary mt-1 flex-shrink-0" size={18} />
-                        <span className="text-muted-foreground">{finding}</span>
-                      </li>
-                    ))}
-                  </ul>
+                {/* Double Diamond Phases */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Discover Phase */}
+                  <Card className="border-l-4 border-l-primary">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="p-2 rounded-lg bg-primary/10">
+                          <Lightbulb className="text-primary" size={24} />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-xl text-foreground">Discover (Diverge)</h3>
+                          <p className="text-sm text-muted-foreground">Exploring the problem space</p>
+                        </div>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        I began by exploring the problem space broadly, conducting user research to understand barriers to therapy. Through surveys and informal interviews, I uncovered two key insights:
+                      </p>
+                      <ul className="space-y-2">
+                        <li className="flex items-start gap-2">
+                          <span className="text-primary mt-1">•</span>
+                          <span className="text-muted-foreground text-sm">Many users, especially in the Middle East, face cultural stigma around seeking therapy.</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <span className="text-primary mt-1">•</span>
+                          <span className="text-muted-foreground text-sm">Even those willing to seek help struggle with confusing booking processes and lack of transparency about therapists.</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  {/* Define Phase */}
+                  <Card className="border-l-4 border-l-accent">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="p-2 rounded-lg bg-accent/10">
+                          <Target className="text-accent" size={24} />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-xl text-foreground">Define (Converge)</h3>
+                          <p className="text-sm text-muted-foreground">Synthesizing the problem</p>
+                        </div>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed mb-4">
+                        I synthesized the research into a clear problem statement:
+                      </p>
+                      <div className="bg-accent/5 rounded-lg p-4 border-l-2 border-accent">
+                        <p className="text-foreground italic">
+                          "How might we design a platform that makes therapy booking simple, private, and culturally sensitive, so users can feel comfortable seeking mental health support?"
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Develop Phase */}
+                  <Card className="border-l-4 border-l-secondary">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="p-2 rounded-lg bg-secondary/10">
+                          <Code className="text-secondary-foreground" size={24} />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-xl text-foreground">Develop (Diverge)</h3>
+                          <p className="text-sm text-muted-foreground">Generating solutions</p>
+                        </div>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        I generated potential solutions, mapping user flows (booking sessions, managing appointments) and sketching low-fidelity wireframes to explore different design directions.
+                      </p>
+                    </CardContent>
+                  </Card>
+
+                  {/* Deliver Phase */}
+                  <Card className="border-l-4 border-l-chart-2">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="p-2 rounded-lg bg-chart-2/10">
+                          <AlertCircle className="text-chart-2" size={24} />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-xl text-foreground">Deliver (Converge)</h3>
+                          <p className="text-sm text-muted-foreground">Refining the solution</p>
+                        </div>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed">
+                        I refined the best solution into high-fidelity prototypes and conducted usability testing. Feedback helped me iterate on the therapist selection flow and homepage scheduling, ensuring the app felt both intuitive and discreet.
+                      </p>
+                    </CardContent>
+                  </Card>
                 </div>
 
-                <div className="rounded-lg overflow-hidden shadow-md mt-6">
+                {/* Research Image */}
+                <div className="rounded-lg overflow-hidden shadow-md">
                   <img
                     src={project.research.image}
                     alt="Research diagram"
