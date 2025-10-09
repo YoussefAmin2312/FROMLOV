@@ -435,15 +435,6 @@ const ProjectCaseStudy = () => {
                     </CardContent>
                   </Card>
                 </div>
-
-                {/* Research Image */}
-                <div className="rounded-lg overflow-hidden shadow-md">
-                  <img
-                    src={project.research.image}
-                    alt="Research diagram"
-                    className="w-full"
-                  />
-                </div>
               </div>
             </section>
 
