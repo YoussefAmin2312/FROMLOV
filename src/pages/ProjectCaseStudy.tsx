@@ -61,8 +61,8 @@ const ProjectCaseStudy = () => {
       team: '1 designer',
       role: 'UI/UX Designer',
       technologies: ['Figma', 'User Research', 'Prototyping', 'Usability Testing'],
-      overview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      problem: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Many individuals struggle to access affordable and convenient mental health support.',
+      overview: 'Thera is a mobile application designed to simplify the process of booking therapy sessions. Users can choose between individual or couples therapy, with the flexibility of online or in-person appointments. The app provides a clear homepage where users can view upcoming sessions and manage their bookings with ease. Thera was created with a strong focus on privacy, accessibility, and cultural sensitivity addressing the unique challenges in the Middle East, where therapy often carries stigma and is not widely accepted. The goal of this project was to design a platform that makes mental health support more approachable, discreet, and user-friendly.',
+      problem: 'Accessing therapy is often confusing and intimidating. Many people struggle to find the right therapist, and booking systems are rarely clear or user-friendly. In the Middle East, these challenges are intensified by cultural stigma—particularly for men, where seeking therapy can be perceived as a weakness. This discourages people from reaching out for help, even when they need it most.',
       research: {
         methods: ['User interviews with 12 participants', 'Competitive analysis of 5 therapy apps', 'Survey with 50+ respondents'],
         findings: [
