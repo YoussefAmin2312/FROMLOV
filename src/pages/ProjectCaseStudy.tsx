@@ -73,20 +73,20 @@ const ProjectCaseStudy = () => {
         image: theraResearchImg
       },
       persona: {
-        name: 'Sarah Chen',
-        age: 32,
-        occupation: 'Marketing Manager',
-        bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Busy professional seeking convenient mental health support that fits her schedule.',
+        name: 'Ahmed Hassan',
+        age: 28,
+        occupation: 'Software Engineer',
+        bio: 'Ahmed works long hours in a demanding tech role. He often feels stressed and overwhelmed but is hesitant to seek therapy due to social stigma. He prefers discreet solutions and values flexibility, as his schedule is unpredictable. Based in Cairo, Egypt, Ahmed is married and seeking professional support to balance work and personal life.',
         photo: theraPersonaImg,
         goals: [
-          'Find a therapist who understands her work-life balance challenges',
-          'Access therapy sessions without disrupting her busy schedule',
-          'Track progress and maintain consistency in treatment'
+          'Find a therapist without feeling judged',
+          'Easily book and manage sessions online',
+          'Balance work and personal life with professional support'
         ],
         frustrations: [
-          'Traditional therapy requires too much time commitment',
-          'Difficulty finding therapists with immediate availability',
-          'Concerns about privacy when booking appointments'
+          'Uncertainty about which therapist is the right fit',
+          'Booking systems that are unclear or outdated',
+          'Cultural stigma — fear of being seen as weak if he seeks help'
         ]
       },
       projectGoals: [
