@@ -22,6 +22,16 @@ import theraWireframeHighImg from '@/assets/thera-wireframe-high.jpg';
 import theraFinalUIImg from '@/assets/thera-final-ui.jpg';
 import theraUIComponentsImg from '@/assets/thera-ui-components.jpg';
 import theraUsabilityImg from '@/assets/thera-usability-testing.jpg';
+import theraHighScreen1 from '@/assets/thera-high-screen-1.png';
+import theraHighScreen2 from '@/assets/thera-high-screen-2.png';
+import theraHighScreen3 from '@/assets/thera-high-screen-3.png';
+import theraHighScreen4 from '@/assets/thera-high-screen-4.png';
+import theraHighScreen5 from '@/assets/thera-high-screen-5.png';
+import theraHighScreen6 from '@/assets/thera-high-screen-6.png';
+import theraHighScreen7 from '@/assets/thera-high-screen-7.png';
+import theraHighScreen8 from '@/assets/thera-high-screen-8.png';
+import theraHighScreen9 from '@/assets/thera-high-screen-9.png';
+import theraHighScreen10 from '@/assets/thera-high-screen-10.png';
 
 const ProjectCaseStudy = () => {
   const { projectId } = useParams();
@@ -584,12 +594,27 @@ const ProjectCaseStudy = () => {
               <div className="space-y-8">
                 <div>
                   <h3 className="font-semibold text-xl text-foreground mb-4">High-fidelity Screens</h3>
-                  <div className="rounded-lg overflow-hidden shadow-md">
-                    <img
-                      src={project.finalUI.screens}
-                      alt="Final UI screens"
-                      className="w-full"
-                    />
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {[
+                      { src: theraHighScreen1, alt: 'Onboarding - Find Your Therapist' },
+                      { src: theraHighScreen2, alt: 'Onboarding - Book in Minutes' },
+                      { src: theraHighScreen3, alt: 'Onboarding - Heal at your Pace' },
+                      { src: theraHighScreen4, alt: 'Home - Upcoming Sessions' },
+                      { src: theraHighScreen5, alt: 'Therapist List' },
+                      { src: theraHighScreen6, alt: 'Filter Options' },
+                      { src: theraHighScreen7, alt: 'Therapist List with Footer' },
+                      { src: theraHighScreen8, alt: 'Therapist Details' },
+                      { src: theraHighScreen9, alt: 'Book Appointment - Availability' },
+                      { src: theraHighScreen10, alt: 'Booking Confirmation' }
+                    ].map((screen, index) => (
+                      <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                        <img
+                          src={screen.src}
+                          alt={screen.alt}
+                          className="w-full h-auto"
+                        />
+                      </div>
+                    ))}
                   </div>
                 </div>
                 <div>
