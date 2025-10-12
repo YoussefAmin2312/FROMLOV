@@ -32,6 +32,7 @@ import theraHighScreen7 from '@/assets/thera-high-screen-7.png';
 import theraHighScreen8 from '@/assets/thera-high-screen-8.png';
 import theraHighScreen9 from '@/assets/thera-high-screen-9.png';
 import theraHighScreen10 from '@/assets/thera-high-screen-10.png';
+import theraInfoArchImg from '@/assets/thera-information-architecture.png';
 
 const ProjectCaseStudy = () => {
   const { projectId } = useParams();
@@ -531,6 +532,28 @@ const ProjectCaseStudy = () => {
                   </li>
                 ))}
               </ul>
+            </section>
+
+            {/* Information Architecture */}
+            <section>
+              <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
+                Information Architecture
+              </h2>
+              <div className="space-y-6">
+                <p className="text-muted-foreground leading-relaxed">
+                  This information architecture represents the structure of a therapy booking application designed to make it easy for users to connect with therapists either online or in person. The goal was to create a simple, intuitive flow that minimizes friction from login to session booking.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  The flow starts with the authentication process, where users can log in using email or social accounts (Google, Apple, or Facebook), reset their password, or sign up for a new account.
+                </p>
+                <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                  <img
+                    src={theraInfoArchImg}
+                    alt="Information Architecture diagram showing app structure"
+                    className="w-full"
+                  />
+                </div>
+              </div>
             </section>
 
             {/* User Flow */}
