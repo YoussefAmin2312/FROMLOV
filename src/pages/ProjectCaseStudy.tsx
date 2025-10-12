@@ -15,7 +15,7 @@ import portfolioWebsiteImg from '@/assets/portfolio-website-project.jpg';
 import theraResearchImg from '@/assets/thera-research-diagram.jpg';
 import theraPersonaImg from '@/assets/thera-persona-photo.jpg';
 import doubleDiamondImg from '@/assets/double-diamond-diagram.png';
-import theraUserFlowImg from '@/assets/thera-user-flow.jpg';
+import theraTaskFlowImg from '@/assets/thera-task-flow.png';
 import theraWireframeLowImg from '@/assets/thera-wireframe-low.jpg';
 import theraWireframeMidImg from '@/assets/thera-wireframe-mid.jpg';
 import theraWireframeHighImg from '@/assets/thera-wireframe-high.jpg';
@@ -112,7 +112,7 @@ const ProjectCaseStudy = () => {
         'Implement clear privacy features that build user trust'
       ],
       userFlow: {
-        image: theraUserFlowImg
+        image: theraTaskFlowImg
       },
       wireframes: {
         low: theraWireframeLowImg,
@@ -561,10 +561,13 @@ const ProjectCaseStudy = () => {
               <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
                 User Flow / Task Flow
               </h2>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                The flow includes the search of a specific doctor through filters; the choice of doctor and time slot and finally the checkout.
+              </p>
               <div className="rounded-lg overflow-hidden shadow-md">
                 <img
                   src={project.userFlow.image}
-                  alt="User flow diagram"
+                  alt="Task flow diagram showing booking journey"
                   className="w-full"
                 />
               </div>
