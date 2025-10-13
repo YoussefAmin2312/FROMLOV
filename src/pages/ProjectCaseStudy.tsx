@@ -26,7 +26,6 @@ import theraWireframeLow7 from '@/assets/thera-wireframe-low-7.png';
 import theraWireframeLow8 from '@/assets/thera-wireframe-low-8.png';
 import theraWireframeLow9 from '@/assets/thera-wireframe-low-9.png';
 import theraWireframeLow10 from '@/assets/thera-wireframe-low-10.png';
-import theraUsabilityImg from '@/assets/thera-usability-testing.jpg';
 import theraHighScreen1 from '@/assets/thera-high-screen-1.png';
 import theraHighScreen2 from '@/assets/thera-high-screen-2.png';
 import theraHighScreen3 from '@/assets/thera-high-screen-3.png';
@@ -134,13 +133,31 @@ const ProjectCaseStudy = () => {
         ]
       },
       usabilityTesting: {
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Conducted moderated usability tests with 8 participants to validate design decisions.',
-        changes: [
-          'Simplified onboarding from 5 steps to 3 based on user feedback',
-          'Added quick booking feature for users who prefer immediate sessions',
-          'Redesigned privacy settings to be more prominent and accessible'
+        description: 'I conducted remote usability testing with two participants who matched the app\'s target audience—people seeking accessible and comfortable therapy options. Both were asked to complete key tasks such as creating an account, booking a session, and using the voice-based chat feature.',
+        findings: [
+          {
+            participant: 'Participant 1',
+            feedback: 'The booking flow felt slightly confusing when selecting a therapist.'
+          },
+          {
+            participant: 'Participant 2',
+            feedback: 'The voice assistant didn\'t feel clear about when it was listening or responding.'
+          }
         ],
-        image: theraUsabilityImg
+        improvements: [
+          {
+            title: 'Simplified Booking Flow',
+            description: 'Clearer therapist cards and session details for easier selection'
+          },
+          {
+            title: 'Visual Voice Cues',
+            description: 'Added indicators to show when the voice assistant is active'
+          },
+          {
+            title: 'Enhanced Navigation',
+            description: 'Improved navigation labels for faster task completion'
+          }
+        ]
       },
       keyTakeaways: [
         'Early user testing revealed critical pain points that shaped the final design',
@@ -643,28 +660,54 @@ const ProjectCaseStudy = () => {
               <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
                 Usability Testing & Iterations
               </h2>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+              <p className="text-muted-foreground leading-relaxed text-lg mb-8">
                 {project.usabilityTesting.description}
               </p>
               
-              <div className="mb-6">
-                <h3 className="font-semibold text-xl text-foreground mb-3">Changes Made</h3>
-                <ul className="space-y-2">
-                  {project.usabilityTesting.changes.map((change, index) => (
-                    <li key={index} className="flex items-start space-x-3">
-                      <Code className="text-primary mt-1 flex-shrink-0" size={18} />
-                      <span className="text-muted-foreground">{change}</span>
-                    </li>
+              {/* Participant Findings */}
+              <div className="mb-10">
+                <h3 className="font-semibold text-2xl text-foreground mb-6 flex items-center gap-2">
+                  <AlertCircle className="text-primary" size={24} />
+                  Key Findings
+                </h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {project.usabilityTesting.findings.map((finding, index) => (
+                    <Card key={index} className="border-l-4 border-l-primary/60 bg-card/50">
+                      <CardContent className="p-6">
+                        <div className="flex items-start gap-3">
+                          <div className="bg-primary/10 p-3 rounded-full">
+                            <Users className="text-primary" size={20} />
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-foreground mb-2">{finding.participant}</h4>
+                            <p className="text-muted-foreground leading-relaxed">"{finding.feedback}"</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
                   ))}
-                </ul>
+                </div>
               </div>
 
-              <div className="rounded-lg overflow-hidden shadow-md">
-                <img
-                  src={project.usabilityTesting.image}
-                  alt="Usability testing results"
-                  className="w-full"
-                />
+              {/* Improvements Made */}
+              <div>
+                <h3 className="font-semibold text-2xl text-foreground mb-6 flex items-center gap-2">
+                  <Lightbulb className="text-primary" size={24} />
+                  Improvements Made
+                </h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {project.usabilityTesting.improvements.map((improvement, index) => (
+                    <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+                      <CardContent className="p-6">
+                        <div className="mb-4 flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                          <Target className="text-primary" size={24} />
+                        </div>
+                        <h4 className="font-semibold text-foreground text-lg mb-2">{improvement.title}</h4>
+                        <p className="text-muted-foreground leading-relaxed">{improvement.description}</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
               </div>
             </section>
 
