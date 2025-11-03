@@ -292,46 +292,45 @@ const ProjectCaseStudy = () => {
   if (isTheraProject && 'persona' in project) {
     return (
       <div className="min-h-screen bg-background">
-        {/* Header */}
-        <div className="bg-muted/30 py-8">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <Button 
-              variant="ghost" 
-              onClick={() => navigate('/')}
-              className="mb-6"
-            >
-              <ArrowLeft size={16} className="mr-2" />
-              Back to Portfolio
-            </Button>
-            
-            <div className="flex items-center gap-4 mb-4">
-              <Badge variant="secondary">{project.category}</Badge>
-              <span className="text-sm text-muted-foreground">{project.duration}</span>
+        {/* Hero Header with Cover Image */}
+        <div className="relative w-full h-[70vh] min-h-[500px]">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
+          
+          <div className="absolute inset-0 flex flex-col justify-end">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+              <Button 
+                variant="ghost" 
+                onClick={() => navigate('/')}
+                className="mb-6 text-white hover:bg-white/20"
+              >
+                <ArrowLeft size={16} className="mr-2" />
+                Back to Portfolio
+              </Button>
+              
+              <div className="flex items-center gap-4 mb-4">
+                <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
+                  {project.category}
+                </Badge>
+                <span className="text-sm text-white/90">{project.duration}</span>
+              </div>
+              
+              <h1 className="font-heading font-bold text-4xl lg:text-6xl text-white mb-4">
+                {project.title}
+              </h1>
+              <p className="text-xl text-white/90 mb-8 max-w-3xl">
+                {project.subtitle}
+              </p>
             </div>
-            
-            <h1 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-4">
-              {project.title}
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl">
-              {project.subtitle}
-            </p>
           </div>
         </div>
 
-        {/* Project Video */}
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="rounded-lg overflow-hidden shadow-lg mb-12">
-            <video
-              src={theraDemoVideo}
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="auto"
-              poster={theraImg}
-              className="w-full h-96 object-cover"
-            />
-          </div>
+        {/* Main Content */}
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
           <div className="max-w-5xl mx-auto space-y-16">
             {/* Project Overview */}
