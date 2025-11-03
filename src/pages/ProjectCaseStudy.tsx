@@ -299,14 +299,14 @@ const ProjectCaseStudy = () => {
             alt={project.title}
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-background" />
           
           <div className="absolute inset-0 flex flex-col justify-end">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-12">
               <Button 
-                variant="ghost" 
+                variant="outline" 
                 onClick={() => navigate('/')}
-                className="mb-6 text-white hover:bg-white/20"
+                className="mb-6 text-white border-white/50 hover:bg-white hover:text-black backdrop-blur-sm bg-black/20"
               >
                 <ArrowLeft size={16} className="mr-2" />
                 Back to Portfolio
