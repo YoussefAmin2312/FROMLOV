@@ -9,6 +9,7 @@ import mendAiImg from '@/assets/mend-ai-project.jpg';
 import theraImg from '@/assets/thera-project.png';
 import theraDemoVideo from '@/assets/thera-demo-video.mp4';
 import teachlyImg from '@/assets/teachly-project.jpg';
+import teachlyHeaderImg from '@/assets/teachly-header.jpg';
 import yogaSkincareImg from '@/assets/yoga-skincare-project.jpg';
 import cyberPhysicalImg from '@/assets/cyber-physical-project.jpg';
 import temperatureSensorImg from '@/assets/temperature-sensor-project.jpg';
@@ -384,16 +385,21 @@ const ProjectCaseStudy = () => {
 
   // Render detailed UX Case Study for Thera and Teachly
   if (isDetailedCaseStudy && 'persona' in project) {
+    const isTeachlyProject = projectId === 'teachly';
+    const headerImage = isTeachlyProject ? teachlyHeaderImg : project.image;
+    
     return (
       <div className="min-h-screen bg-background">
         {/* Hero Header with Cover Image */}
-        <div className="relative w-full h-[50vh] min-h-[400px] max-h-[600px]">
+        <div className={`relative w-full ${isTeachlyProject ? 'h-[90vh] min-h-[700px]' : 'h-[50vh] min-h-[400px] max-h-[600px]'}`}>
           <img
-            src={project.image}
+            src={headerImage}
             alt={project.title}
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-background" />
+          {!isTeachlyProject && (
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-background" />
+          )}
           
           <div className="absolute inset-0 flex flex-col justify-end">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-12">
