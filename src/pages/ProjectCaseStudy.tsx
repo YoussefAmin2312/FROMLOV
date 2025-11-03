@@ -387,11 +387,11 @@ const ProjectCaseStudy = () => {
     return (
       <div className="min-h-screen bg-background">
         {/* Hero Header with Cover Image */}
-        <div className="relative w-full h-[70vh] min-h-[500px]">
+        <div className="relative w-full h-[50vh] min-h-[400px] max-h-[600px]">
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-background" />
           
