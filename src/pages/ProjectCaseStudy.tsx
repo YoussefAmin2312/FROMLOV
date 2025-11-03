@@ -152,6 +152,18 @@ const ProjectCaseStudy = () => {
           theraWireframeLow8,
           theraWireframeLow9,
           theraWireframeLow10
+        ],
+        high: [
+          theraHighScreen1,
+          theraHighScreen2,
+          theraHighScreen3,
+          theraHighScreen4,
+          theraHighScreen5,
+          theraHighScreen6,
+          theraHighScreen7,
+          theraHighScreen8,
+          theraHighScreen9,
+          theraHighScreen10
         ]
       },
       usabilityTesting: {
@@ -771,36 +783,27 @@ const ProjectCaseStudy = () => {
             </section>
 
             {/* Final UI Design */}
-            <section>
-              <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
-                Final UI Design
-              </h2>
-              <div>
-                <h3 className="font-semibold text-xl text-foreground mb-4">High-fidelity Screens</h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                  {[
-                    { src: theraHighScreen1, alt: 'Onboarding - Find Your Therapist' },
-                    { src: theraHighScreen2, alt: 'Onboarding - Book in Minutes' },
-                    { src: theraHighScreen3, alt: 'Onboarding - Heal at your Pace' },
-                    { src: theraHighScreen4, alt: 'Home - Upcoming Sessions' },
-                    { src: theraHighScreen5, alt: 'Therapist List' },
-                    { src: theraHighScreen6, alt: 'Filter Options' },
-                    { src: theraHighScreen7, alt: 'Therapist List with Footer' },
-                    { src: theraHighScreen8, alt: 'Therapist Details' },
-                    { src: theraHighScreen9, alt: 'Book Appointment - Availability' },
-                    { src: theraHighScreen10, alt: 'Booking Confirmation' }
-                  ].map((screen, index) => (
-                    <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
-                      <img
-                        src={screen.src}
-                        alt={screen.alt}
-                        className="w-full h-auto"
-                      />
-                    </div>
-                  ))}
+            {project.wireframes?.high && project.wireframes.high.length > 0 && (
+              <section>
+                <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
+                  Final UI Design
+                </h2>
+                <div>
+                  <h3 className="font-semibold text-xl text-foreground mb-4">High-fidelity Screens</h3>
+                  <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {project.wireframes.high.map((screen, index) => (
+                      <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                        <img
+                          src={screen}
+                          alt={`High-fidelity screen ${index + 1}`}
+                          className="w-full h-auto"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            </section>
+              </section>
+            )}
 
             {/* Usability Testing */}
             <section>
