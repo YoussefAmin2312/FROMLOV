@@ -391,14 +391,24 @@ const ProjectCaseStudy = () => {
     return (
       <div className="min-h-screen bg-background">
         {/* Hero Header with Cover Image */}
-        <div className={`relative w-full ${isTeachlyProject ? 'h-[90vh] min-h-[700px]' : 'h-[50vh] min-h-[400px] max-h-[600px]'}`}>
-          <img
-            src={headerImage}
-            alt={project.title}
-            className="w-full h-full object-cover object-center"
-          />
-          {!isTeachlyProject && (
-            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-background" />
+        <div className={`relative w-full ${isTeachlyProject ? 'h-[90vh] min-h-[700px] bg-gradient-to-br from-purple-600 via-purple-400 to-blue-400' : 'h-[50vh] min-h-[400px] max-h-[600px]'}`}>
+          {isTeachlyProject ? (
+            <div className="w-full h-full flex items-center justify-center">
+              <img
+                src={headerImage}
+                alt={project.title}
+                className="max-w-4xl w-full h-auto object-contain px-8"
+              />
+            </div>
+          ) : (
+            <>
+              <img
+                src={headerImage}
+                alt={project.title}
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-background" />
+            </>
           )}
           
           <div className="absolute inset-0 flex flex-col justify-end">
@@ -406,7 +416,7 @@ const ProjectCaseStudy = () => {
               <Button 
                 variant="outline" 
                 onClick={() => navigate('/')}
-                className="mb-6 text-white border-white/50 hover:bg-white hover:text-black backdrop-blur-sm bg-black/20"
+                className={`mb-6 ${isTeachlyProject ? 'text-white border-white/50 hover:bg-white hover:text-purple-600' : 'text-white border-white/50 hover:bg-white hover:text-black'} backdrop-blur-sm bg-black/20`}
               >
                 <ArrowLeft size={16} className="mr-2" />
                 Back to Portfolio
