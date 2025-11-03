@@ -51,6 +51,14 @@ import teachlyWireframeLow9 from '@/assets/teachly-wireframe-low-9.png';
 import teachlyWireframeLow10 from '@/assets/teachly-wireframe-low-10.png';
 import teachlyWireframeLow11 from '@/assets/teachly-wireframe-low-11.png';
 import teachlyWireframeLow12 from '@/assets/teachly-wireframe-low-12.png';
+import teachlyHighScreen1 from '@/assets/teachly-high-screen-1.png';
+import teachlyHighScreen2 from '@/assets/teachly-high-screen-2.png';
+import teachlyHighScreen3 from '@/assets/teachly-high-screen-3.png';
+import teachlyHighScreen4 from '@/assets/teachly-high-screen-4.png';
+import teachlyHighScreen5 from '@/assets/teachly-high-screen-5.png';
+import teachlyHighScreen6 from '@/assets/teachly-high-screen-6.png';
+import teachlyHighScreen7 from '@/assets/teachly-high-screen-7.png';
+import teachlyHighScreen8 from '@/assets/teachly-high-screen-8.png';
 
 const ProjectCaseStudy = () => {
   const { projectId } = useParams();
@@ -240,6 +248,16 @@ const ProjectCaseStudy = () => {
           teachlyWireframeLow10,
           teachlyWireframeLow11,
           teachlyWireframeLow12
+        ],
+        high: [
+          teachlyHighScreen1,
+          teachlyHighScreen2,
+          teachlyHighScreen3,
+          teachlyHighScreen4,
+          teachlyHighScreen5,
+          teachlyHighScreen6,
+          teachlyHighScreen7,
+          teachlyHighScreen8
         ]
       },
       usabilityTesting: {
