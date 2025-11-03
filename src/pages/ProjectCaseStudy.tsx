@@ -39,6 +39,12 @@ import theraHighScreen8 from '@/assets/thera-high-screen-8.png';
 import theraHighScreen9 from '@/assets/thera-high-screen-9.png';
 import theraHighScreen10 from '@/assets/thera-high-screen-10.png';
 import theraInfoArchImg from '@/assets/thera-information-architecture.png';
+import teachlyWireframeLow1 from '@/assets/teachly-wireframe-low-1.png';
+import teachlyWireframeLow2 from '@/assets/teachly-wireframe-low-2.png';
+import teachlyWireframeLow3 from '@/assets/teachly-wireframe-low-3.png';
+import teachlyWireframeLow4 from '@/assets/teachly-wireframe-low-4.png';
+import teachlyWireframeLow5 from '@/assets/teachly-wireframe-low-5.png';
+import teachlyWireframeLow6 from '@/assets/teachly-wireframe-low-6.png';
 
 const ProjectCaseStudy = () => {
   const { projectId } = useParams();
@@ -216,10 +222,12 @@ const ProjectCaseStudy = () => {
       },
       wireframes: {
         low: [
-          theraWireframeLow1, // Placeholders - ideally would have teachly wireframes
-          theraWireframeLow2,
-          theraWireframeLow3,
-          theraWireframeLow4
+          teachlyWireframeLow1,
+          teachlyWireframeLow2,
+          teachlyWireframeLow3,
+          teachlyWireframeLow4,
+          teachlyWireframeLow5,
+          teachlyWireframeLow6
         ]
       },
       usabilityTesting: {
