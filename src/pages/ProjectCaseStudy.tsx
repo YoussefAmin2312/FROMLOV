@@ -493,7 +493,7 @@ const ProjectCaseStudy = () => {
   }
 
   // Render detailed UX Case Study for Thera and Teachly
-  if (isDetailedCaseStudy && 'persona' in project) {
+  if (isDetailedCaseStudy && ('persona' in project || 'personas' in project)) {
     const isTeachlyProject = projectId === 'teachly';
     const headerImage = isTeachlyProject ? teachlyHeaderImg : project.image;
     
@@ -840,22 +840,22 @@ const ProjectCaseStudy = () => {
                     <div className="flex flex-col md:flex-row gap-6">
                       <div className="flex-shrink-0">
                         <img
-                          src={project.persona.photo}
-                          alt={project.persona.name}
+                          src={(project as any).persona.photo}
+                          alt={(project as any).persona.name}
                           className="w-32 h-32 rounded-full object-cover"
                         />
                       </div>
                       <div className="flex-1 space-y-4">
                         <div>
                           <h3 className="font-semibold text-xl text-foreground">
-                            {project.persona.name}
+                            {(project as any).persona.name}
                           </h3>
                           <p className="text-sm text-muted-foreground">
-                            {project.persona.age} years old, {project.persona.occupation}
+                            {(project as any).persona.age} years old, {(project as any).persona.occupation}
                           </p>
                         </div>
                         <p className="text-muted-foreground leading-relaxed">
-                          {project.persona.bio}
+                          {(project as any).persona.bio}
                         </p>
                       </div>
                     </div>
@@ -864,7 +864,7 @@ const ProjectCaseStudy = () => {
                       <div>
                         <h4 className="font-semibold text-foreground mb-3">Goals</h4>
                         <ul className="space-y-2">
-                          {project.persona.goals.map((goal, index) => (
+                          {(project as any).persona.goals.map((goal: string, index: number) => (
                             <li key={index} className="flex items-start space-x-2">
                               <span className="text-primary mt-1">✓</span>
                               <span className="text-muted-foreground text-sm">{goal}</span>
@@ -875,7 +875,7 @@ const ProjectCaseStudy = () => {
                       <div>
                         <h4 className="font-semibold text-foreground mb-3">Frustrations</h4>
                         <ul className="space-y-2">
-                          {project.persona.frustrations.map((frustration, index) => (
+                          {(project as any).persona.frustrations.map((frustration: string, index: number) => (
                             <li key={index} className="flex items-start space-x-2">
                               <AlertCircle className="text-destructive mt-0.5 flex-shrink-0" size={16} />
                               <span className="text-muted-foreground text-sm">{frustration}</span>
