@@ -348,37 +348,36 @@ const ProjectCaseStudy = () => {
         findings: [
           {
             participant: 'Participant 1',
-            feedback: 'The tutor filter options were helpful, but I wanted to filter by teaching methodology (immersive vs. structured).'
+            feedback: 'The app looks clean, but I wasn\'t sure what happens after clicking \'Book a Lesson\'—maybe add a clearer confirmation or step indicator.'
           },
           {
             participant: 'Participant 2',
-            feedback: 'The booking calendar was intuitive, but I wish I could see my tutor\'s availability for the entire month at once.'
+            feedback: 'I liked the tutor cards, but I wish there was a way to see available times before clicking into the full profile.'
           },
           {
             participant: 'Participant 3',
-            feedback: 'The progress dashboard was motivating, but I wanted more granular insights into which skills I need to work on.'
+            feedback: 'The Apple Pay confirmation screen felt realistic, but the loading screen could last a bit shorter—it made me think it froze.'
           }
         ],
         improvements: [
           {
-            title: 'Enhanced Filter Options',
-            description: 'Added teaching methodology filters and specialty tags (business, conversational, exam prep)'
+            title: 'Clearer Booking Feedback',
+            description: 'Added a short confirmation step before payment to reassure users about selected time and tutor.'
           },
           {
-            title: 'Monthly Calendar View',
-            description: 'Implemented a monthly availability view with recurring slot suggestions'
+            title: 'Preview of Tutor Availability',
+            description: 'Included small availability tags (e.g., "Available today" or "Next available: Thursday") on tutor cards for faster decision-making.'
           },
           {
-            title: 'Detailed Progress Breakdown',
-            description: 'Created skill-specific progress charts (speaking, listening, reading, writing)'
+            title: 'Faster Loading Simulation',
+            description: 'Reduced the Apple Pay mimic loading duration and added a smooth transition animation to improve perceived responsiveness.'
           }
         ]
       },
       keyTakeaways: [
-        'User research revealed that transparency in tutor qualifications is crucial for trust',
-        'Iterative testing improved task completion rates by 45% for first-time bookings',
-        'Progress visualization features significantly increased user engagement and retention',
-        'Flexible scheduling options were the most valued feature across all user segments'
+        'Users highly valued clarity in the booking process—every step needed to feel confirmed and predictable.',
+        'Transparency and tutor information (rating, cost, reviews) were the main factors influencing booking decisions.',
+        'Small details like smooth transitions and feedback screens significantly improved user trust and perceived quality.'
       ]
     },
     'yoga-skincare': {
