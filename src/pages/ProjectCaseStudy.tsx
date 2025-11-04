@@ -256,25 +256,42 @@ const ProjectCaseStudy = () => {
           }
         ]
       },
-      persona: {
-        name: 'Sarah Martinez',
-        age: 26,
-        occupation: 'Marketing Manager',
-        bio: 'Sarah is a busy professional living in Dubai who wants to learn Arabic to advance her career and better connect with local clients. She has tried language apps but finds them too generic and unmotivating. She needs flexible scheduling due to her unpredictable work hours and prefers one-on-one sessions where she can practice business conversations. Sarah values clear progress tracking and wants to see tangible improvement in her language skills.',
-        photo: theraPersonaImg, // Using existing photo as placeholder
-        goals: [
-          'Learn conversational and business Arabic within 6 months',
-          'Find a tutor who understands professional language needs',
-          'Schedule lessons around an unpredictable work schedule',
-          'Track progress and see measurable improvement'
-        ],
-        frustrations: [
-          'Language apps feel impersonal and don\'t address specific professional needs',
-          'Uncertainty about which tutor is the right fit for business Arabic',
-          'Difficulty finding tutors with flexible scheduling options',
-          'Lack of clear progress tracking makes it hard to stay motivated'
-        ]
-      },
+      personas: [
+        {
+          name: 'Mariam Ahmed',
+          age: 24,
+          occupation: 'Marketing Executive',
+          location: 'Dubai, UAE',
+          bio: 'Sara is a young professional who recently started working with international clients. She wants to learn Spanish to communicate better with her company\'s partners and expand her career opportunities. Her busy schedule makes it difficult to attend fixed classes, so she prefers flexible, one-on-one online lessons.',
+          goals: [
+            'Learn conversational Spanish for professional use.',
+            'Find a reliable tutor with flexible hours.',
+            'Pay easily and track her upcoming sessions.'
+          ],
+          frustrations: [
+            'Most apps focus on vocabulary, not real conversation.',
+            'Hard to know if a tutor fits her learning style before booking.',
+            'Complicated scheduling interfaces on other platforms.'
+          ]
+        },
+        {
+          name: 'Omar Hassan',
+          age: 22,
+          occupation: 'University Student',
+          location: 'Cairo, Egypt',
+          bio: 'Omar is a computer science student who wants to improve his English speaking skills to prepare for internships abroad. He prefers affordable lessons with native speakers and enjoys short, focused sessions that fit into his class schedule.',
+          goals: [
+            'Improve English speaking confidence.',
+            'Filter tutors by price and availability.',
+            'Learn through casual, engaging sessions rather than structured courses.'
+          ],
+          frustrations: [
+            'Finds it hard to identify affordable, trustworthy native tutors.',
+            'Feels unsure about paying for a full course without knowing if the tutor fits his style.',
+            'Payment steps and checkout flows on other platforms are often confusing or unclear.'
+          ]
+        }
+      ],
       projectGoals: [
         'Create an intuitive tutor discovery and filtering system',
         'Design a flexible scheduling interface that accommodates various time zones',
@@ -586,7 +603,7 @@ const ProjectCaseStudy = () => {
                     {/* Framework Introduction */}
                     <div className="bg-muted/50 rounded-lg p-6 border border-border">
                       <p className="text-muted-foreground leading-relaxed">
-                        {project.research.introduction}
+                        {(project.research as any).introduction}
                       </p>
                     </div>
 
@@ -601,7 +618,7 @@ const ProjectCaseStudy = () => {
 
                     {/* Design Thinking Phases */}
                     <div className="space-y-6">
-                      {project.research.phases.map((phase, index) => (
+                      {(project.research as any).phases.map((phase: any, index: number) => (
                         <Card key={index} className="border-l-4 border-l-primary">
                           <CardContent className="pt-6">
                             <div className="flex items-start gap-4 mb-4">
@@ -753,60 +770,123 @@ const ProjectCaseStudy = () => {
             {/* Persona */}
             <section>
               <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
-                User Persona
+                User Persona{(project as any).personas ? 's' : ''}
               </h2>
               
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex flex-col md:flex-row gap-6">
-                    <div className="flex-shrink-0">
-                      <img
-                        src={project.persona.photo}
-                        alt={project.persona.name}
-                        className="w-32 h-32 rounded-full object-cover"
-                      />
-                    </div>
-                    <div className="flex-1 space-y-4">
-                      <div>
-                        <h3 className="font-semibold text-xl text-foreground">
-                          {project.persona.name}
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          {project.persona.age} years old, {project.persona.occupation}
+              {(project as any).personas ? (
+                // Multiple personas (for Teachly)
+                <div className="space-y-6">
+                  {(project as any).personas.map((persona: any, index: number) => (
+                    <Card key={index}>
+                      <CardContent className="pt-6">
+                        <div className="flex flex-col md:flex-row gap-6">
+                          <div className="flex-shrink-0">
+                            <div className="w-32 h-32 rounded-full bg-muted flex items-center justify-center">
+                              <Users className="text-muted-foreground" size={48} />
+                            </div>
+                          </div>
+                          <div className="flex-1 space-y-4">
+                            <div>
+                              <h3 className="font-semibold text-xl text-foreground">
+                                {persona.name}
+                              </h3>
+                              <p className="text-sm text-muted-foreground">
+                                {persona.age} years old, {persona.occupation}
+                              </p>
+                              {persona.location && (
+                                <p className="text-sm text-muted-foreground">
+                                  {persona.location}
+                                </p>
+                              )}
+                            </div>
+                            <p className="text-muted-foreground leading-relaxed">
+                              {persona.bio}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-6 mt-6 pt-6 border-t">
+                          <div>
+                            <h4 className="font-semibold text-foreground mb-3">Goals</h4>
+                            <ul className="space-y-2">
+                              {persona.goals.map((goal: string, idx: number) => (
+                                <li key={idx} className="flex items-start space-x-2">
+                                  <span className="text-primary mt-1">✓</span>
+                                  <span className="text-muted-foreground text-sm">{goal}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold text-foreground mb-3">Frustrations</h4>
+                            <ul className="space-y-2">
+                              {persona.frustrations.map((frustration: string, idx: number) => (
+                                <li key={idx} className="flex items-start space-x-2">
+                                  <AlertCircle className="text-destructive mt-0.5 flex-shrink-0" size={16} />
+                                  <span className="text-muted-foreground text-sm">{frustration}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              ) : (
+                // Single persona (for Thera and other projects)
+                <Card>
+                  <CardContent className="pt-6">
+                    <div className="flex flex-col md:flex-row gap-6">
+                      <div className="flex-shrink-0">
+                        <img
+                          src={project.persona.photo}
+                          alt={project.persona.name}
+                          className="w-32 h-32 rounded-full object-cover"
+                        />
+                      </div>
+                      <div className="flex-1 space-y-4">
+                        <div>
+                          <h3 className="font-semibold text-xl text-foreground">
+                            {project.persona.name}
+                          </h3>
+                          <p className="text-sm text-muted-foreground">
+                            {project.persona.age} years old, {project.persona.occupation}
+                          </p>
+                        </div>
+                        <p className="text-muted-foreground leading-relaxed">
+                          {project.persona.bio}
                         </p>
                       </div>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {project.persona.bio}
-                      </p>
                     </div>
-                  </div>
 
-                  <div className="grid md:grid-cols-2 gap-6 mt-6 pt-6 border-t">
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-3">Goals</h4>
-                      <ul className="space-y-2">
-                        {project.persona.goals.map((goal, index) => (
-                          <li key={index} className="flex items-start space-x-2">
-                            <span className="text-primary mt-1">✓</span>
-                            <span className="text-muted-foreground text-sm">{goal}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="grid md:grid-cols-2 gap-6 mt-6 pt-6 border-t">
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Goals</h4>
+                        <ul className="space-y-2">
+                          {project.persona.goals.map((goal, index) => (
+                            <li key={index} className="flex items-start space-x-2">
+                              <span className="text-primary mt-1">✓</span>
+                              <span className="text-muted-foreground text-sm">{goal}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground mb-3">Frustrations</h4>
+                        <ul className="space-y-2">
+                          {project.persona.frustrations.map((frustration, index) => (
+                            <li key={index} className="flex items-start space-x-2">
+                              <AlertCircle className="text-destructive mt-0.5 flex-shrink-0" size={16} />
+                              <span className="text-muted-foreground text-sm">{frustration}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground mb-3">Frustrations</h4>
-                      <ul className="space-y-2">
-                        {project.persona.frustrations.map((frustration, index) => (
-                          <li key={index} className="flex items-start space-x-2">
-                            <AlertCircle className="text-destructive mt-0.5 flex-shrink-0" size={16} />
-                            <span className="text-muted-foreground text-sm">{frustration}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              )}
             </section>
 
             {/* Project Goals */}
