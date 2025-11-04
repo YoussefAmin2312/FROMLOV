@@ -64,6 +64,9 @@ import teachlyHighScreen10 from '@/assets/teachly-high-screen-10.png';
 import teachlyHighScreen11 from '@/assets/teachly-high-screen-11.png';
 import teachlyHighScreen12 from '@/assets/teachly-high-screen-12.png';
 import designThinkingImg from '@/assets/design-thinking-stages.png';
+import teachlyInfoArchImg from '@/assets/teachly-information-architecture.png';
+import teachlyUserFlowImg from '@/assets/teachly-user-flow.png';
+import teachlyTaskFlowImg from '@/assets/teachly-task-flow.png';
 
 const ProjectCaseStudy = () => {
   const { projectId } = useParams();
@@ -298,8 +301,17 @@ const ProjectCaseStudy = () => {
         'Implement clear progress tracking to maintain learner motivation',
         'Build trust through transparent tutor profiles and authentic reviews'
       ],
+      informationArchitecture: {
+        description: 'The information architecture maps out the core structure of Teachly, organizing the main sections — search, tutor cards, scheduling, messaging, and filters. This hierarchy ensures that learners can quickly navigate between discovering tutors and managing their lessons.',
+        image: teachlyInfoArchImg
+      },
       userFlow: {
-        image: theraTaskFlowImg // Placeholder - will need actual teachly flow
+        description: 'This user flow illustrates the complete journey from the splash screen to booking confirmation. It highlights key decision points — whether to message first or book directly — allowing flexibility based on learner preferences.',
+        image: teachlyUserFlowImg
+      },
+      taskFlow: {
+        description: 'The task flow breaks down the specific steps for booking a lesson, from searching and filtering tutors to completing payment. Each stage was designed to minimize friction and provide clear feedback throughout the booking process.',
+        image: teachlyTaskFlowImg
       },
       wireframes: {
         low: [
@@ -904,44 +916,110 @@ const ProjectCaseStudy = () => {
               </ul>
             </section>
 
-            {/* Information Architecture */}
-            <section>
-              <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
-                Information Architecture
-              </h2>
-              <div className="space-y-6">
-                <p className="text-muted-foreground leading-relaxed">
-                  This information architecture represents the structure of a therapy booking application designed to make it easy for users to connect with therapists either online or in person. The goal was to create a simple, intuitive flow that minimizes friction from login to session booking.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  The flow starts with the authentication process, where users can log in using email or social accounts (Google, Apple, or Facebook), reset their password, or sign up for a new account.
-                </p>
-                <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
-                  <img
-                    src={theraInfoArchImg}
-                    alt="Information Architecture diagram showing app structure"
-                    className="w-full"
-                  />
-                </div>
-              </div>
-            </section>
+            {/* Information Architecture & Diagrams */}
+            {isTeachlyProject && (project as any).informationArchitecture ? (
+              // Teachly: Show three separate diagram sections
+              <>
+                {/* Information Architecture */}
+                <section>
+                  <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
+                    Information Architecture
+                  </h2>
+                  <div className="space-y-6">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {(project as any).informationArchitecture.description}
+                    </p>
+                    <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                      <img
+                        src={(project as any).informationArchitecture.image}
+                        alt="Information Architecture diagram"
+                        className="w-full"
+                      />
+                    </div>
+                  </div>
+                </section>
 
-            {/* User Flow */}
-            <section>
-              <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
-                User Flow / Task Flow
-              </h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                The flow includes the search of a specific doctor through filters; the choice of doctor and time slot and finally the checkout.
-              </p>
-              <div className="rounded-lg overflow-hidden shadow-md">
-                <img
-                  src={project.userFlow.image}
-                  alt="Task flow diagram showing booking journey"
-                  className="w-full"
-                />
-              </div>
-            </section>
+                {/* User Flow */}
+                <section>
+                  <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
+                    User Flow
+                  </h2>
+                  <div className="space-y-6">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {(project as any).userFlow.description}
+                    </p>
+                    <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                      <img
+                        src={project.userFlow.image}
+                        alt="User Flow diagram"
+                        className="w-full"
+                      />
+                    </div>
+                  </div>
+                </section>
+
+                {/* Task Flow */}
+                <section>
+                  <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
+                    Task Flow
+                  </h2>
+                  <div className="space-y-6">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {(project as any).taskFlow.description}
+                    </p>
+                    <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                      <img
+                        src={(project as any).taskFlow.image}
+                        alt="Task Flow diagram"
+                        className="w-full"
+                      />
+                    </div>
+                  </div>
+                </section>
+              </>
+            ) : (
+              // Thera: Show original Information Architecture and User Flow sections
+              <>
+                {/* Information Architecture */}
+                <section>
+                  <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
+                    Information Architecture
+                  </h2>
+                  <div className="space-y-6">
+                    <p className="text-muted-foreground leading-relaxed">
+                      This information architecture represents the structure of a therapy booking application designed to make it easy for users to connect with therapists either online or in person. The goal was to create a simple, intuitive flow that minimizes friction from login to session booking.
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      The flow starts with the authentication process, where users can log in using email or social accounts (Google, Apple, or Facebook), reset their password, or sign up for a new account.
+                    </p>
+                    <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                      <img
+                        src={theraInfoArchImg}
+                        alt="Information Architecture diagram showing app structure"
+                        className="w-full"
+                      />
+                    </div>
+                  </div>
+                </section>
+
+                {/* User Flow */}
+                <section>
+                  <h2 className="font-heading font-bold text-3xl text-foreground mb-6">
+                    User Flow / Task Flow
+                  </h2>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    The flow includes the search of a specific doctor through filters; the choice of doctor and time slot and finally the checkout.
+                  </p>
+                  <div className="rounded-lg overflow-hidden shadow-md">
+                    <img
+                      src={project.userFlow.image}
+                      alt="Task flow diagram showing booking journey"
+                      className="w-full"
+                    />
+                  </div>
+                </section>
+              </>
+            )}
 
             {/* Wireframes */}
             <section>
