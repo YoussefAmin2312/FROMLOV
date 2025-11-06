@@ -1,15 +1,15 @@
 import { useNavigate } from 'react-router-dom';
-import bookHeavenImg from '@/assets/book-heaven-project.jpg';
+import vernxCoverImg from '@/assets/vernx-cover.jpg';
 import theraImg from '@/assets/thera-project.png';
 import teachlyImg from '@/assets/teachly-project.jpg';
 const Projects = () => {
   const navigate = useNavigate();
   const projects = [{
     id: 'book-heaven',
-    title: 'Book Heaven',
-    description: 'Flutter bookstore app developed during internship',
-    image: bookHeavenImg,
-    category: 'Mobile App'
+    title: 'VernX',
+    description: 'Luxury Real Estate Website',
+    image: vernxCoverImg,
+    category: 'UI/UX Design'
   }, {
     id: 'thera',
     title: 'Thera',
