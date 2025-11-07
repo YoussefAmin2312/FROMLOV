@@ -1,10 +1,10 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { ArrowLeft, ExternalLink, Github, Calendar, Users, Code, Target, Lightbulb, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
-import { Skeleton } from '@/components/ui/skeleton';
+
 import vernxCoverImg from '@/assets/vernx-cover.jpg';
 import mendAiImg from '@/assets/mend-ai-project.jpg';
 import theraImg from '@/assets/thera-project.png';
@@ -87,11 +87,10 @@ import vernxHighContact from '@/assets/vernx-high-contact.png';
 const ProjectCaseStudy = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
-  const [headerImageLoaded, setHeaderImageLoaded] = useState(false);
+  
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    setHeaderImageLoaded(false);
   }, [projectId]);
 
   const projects = {
@@ -647,14 +646,13 @@ const ProjectCaseStudy = () => {
         <div className={`relative w-full ${isTeachlyProject ? 'h-[90vh] min-h-[700px] bg-gradient-to-br from-purple-600 via-purple-400 to-blue-400' : 'h-[50vh] min-h-[400px] max-h-[600px]'}`}>
           {isTeachlyProject ? (
             <div className="w-full h-full flex items-center justify-center px-8">
-              {!headerImageLoaded && (
-                <Skeleton className="max-w-3xl w-full h-[500px] rounded-none bg-purple-500/20" />
-              )}
               <img
                 src={headerImage}
                 alt={project.title}
-                className={`max-w-3xl w-full h-auto object-contain ${!headerImageLoaded ? 'hidden' : ''}`}
-                onLoad={() => setHeaderImageLoaded(true)}
+                className="max-w-3xl w-full h-auto object-contain"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
               />
             </div>
           ) : (
