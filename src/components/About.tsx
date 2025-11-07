@@ -21,12 +21,12 @@ const About = () => {
         {/* Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
           {/* Left Tall Rectangle - Intro */}
-          <div className="lg:col-span-4 h-[600px] group relative overflow-hidden rounded-xl">
+          <div className="lg:col-span-4 h-[600px] group relative overflow-hidden">
             <div 
-              className="absolute inset-0 bg-cover bg-center transition-all duration-500 grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100"
+              className="absolute inset-0 bg-cover bg-center transition-all duration-500 grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100"
               style={{ backgroundImage: `url(${introImg})` }}
             />
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500" />
+            <div className="absolute inset-0 bg-gray-400/20 group-hover:bg-transparent transition-all duration-500" />
             <div className="relative h-full flex flex-col justify-end p-8 text-white">
               <h3 className="font-heading font-bold text-2xl mb-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                 My Story
@@ -40,12 +40,12 @@ const About = () => {
           {/* Middle Column - Two Stacked Rectangles */}
           <div className="lg:col-span-4 flex flex-col gap-8">
             {/* Top Rectangle - Design Focus */}
-            <div className="h-[288px] group relative overflow-hidden rounded-xl">
+            <div className="h-[288px] group relative overflow-hidden">
               <div 
-                className="absolute inset-0 bg-cover bg-center transition-all duration-500 grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100"
+                className="absolute inset-0 bg-cover bg-center transition-all duration-500 grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100"
                 style={{ backgroundImage: `url(${skill1Img})` }}
               />
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500" />
+              <div className="absolute inset-0 bg-gray-400/20 group-hover:bg-transparent transition-all duration-500" />
               <div className="relative h-full flex flex-col justify-end p-6 text-white">
                 <h3 className="font-heading font-bold text-xl mb-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   Design Philosophy
@@ -57,12 +57,12 @@ const About = () => {
             </div>
 
             {/* Bottom Rectangle - Development Skills */}
-            <div className="h-[288px] group relative overflow-hidden rounded-xl">
+            <div className="h-[288px] group relative overflow-hidden">
               <div 
-                className="absolute inset-0 bg-cover bg-center transition-all duration-500 grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100"
+                className="absolute inset-0 bg-cover bg-center transition-all duration-500 grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100"
                 style={{ backgroundImage: `url(${skill2Img})` }}
               />
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500" />
+              <div className="absolute inset-0 bg-gray-400/20 group-hover:bg-transparent transition-all duration-500" />
               <div className="relative h-full flex flex-col justify-end p-6 text-white">
                 <h3 className="font-heading font-bold text-xl mb-3 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   Technical Skills
@@ -75,12 +75,12 @@ const About = () => {
           </div>
 
           {/* Right Tall Rectangle - Philosophy/Photo */}
-          <div className="lg:col-span-4 h-[600px] group relative overflow-hidden rounded-xl">
+          <div className="lg:col-span-4 h-[600px] group relative overflow-hidden">
             <div 
-              className="absolute inset-0 bg-cover bg-center transition-all duration-500 grayscale brightness-50 group-hover:grayscale-0 group-hover:brightness-100"
+              className="absolute inset-0 bg-cover bg-center transition-all duration-500 grayscale brightness-75 group-hover:grayscale-0 group-hover:brightness-100"
               style={{ backgroundImage: `url(${philosophyImg})` }}
             />
-            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-500" />
+            <div className="absolute inset-0 bg-gray-400/20 group-hover:bg-transparent transition-all duration-500" />
             <div className="relative h-full flex flex-col justify-end p-8 text-white">
               <h3 className="font-heading font-bold text-2xl mb-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                 Philosophy
