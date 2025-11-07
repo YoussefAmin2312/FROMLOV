@@ -648,12 +648,12 @@ const ProjectCaseStudy = () => {
           {isTeachlyProject ? (
             <div className="w-full h-full flex items-center justify-center px-8">
               {!headerImageLoaded && (
-                <Skeleton className="max-w-4xl w-full h-[600px] rounded-none" />
+                <Skeleton className="max-w-3xl w-full h-[500px] rounded-none bg-purple-500/20" />
               )}
               <img
                 src={headerImage}
                 alt={project.title}
-                className={`max-w-4xl w-full h-auto object-contain ${!headerImageLoaded ? 'hidden' : ''}`}
+                className={`max-w-3xl w-full h-auto object-contain ${!headerImageLoaded ? 'hidden' : ''}`}
                 onLoad={() => setHeaderImageLoaded(true)}
               />
             </div>
