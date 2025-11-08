@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import Footer from '@/components/Footer';
@@ -7,6 +8,10 @@ import aboutPhilosophyImg from '@/assets/about-philosophy.jpg';
 
 const AboutPage = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return <div className="min-h-screen bg-gradient-subtle">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 pt-8">
