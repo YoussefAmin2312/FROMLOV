@@ -1,9 +1,10 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ArrowLeft, ExternalLink, Github, Calendar, Users, Code, Target, Lightbulb, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
+import ImageZoomDialog from '@/components/ImageZoomDialog';
 
 import vernxCoverImg from '@/assets/vernx-cover.jpg';
 import mendAiImg from '@/assets/mend-ai-project.jpg';
@@ -87,11 +88,23 @@ import vernxHighContact from '@/assets/vernx-high-contact.png';
 const ProjectCaseStudy = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
+  const [zoomImage, setZoomImage] = useState<{ src: string; alt: string } | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [projectId]);
+
+  const handleImageClick = (src: string, alt: string) => {
+    setZoomImage({ src, alt });
+  };
 
   const projects = {
     'book-heaven': {
@@ -642,6 +655,34 @@ const ProjectCaseStudy = () => {
     
     return (
       <div className="min-h-screen bg-background">
+        <ImageZoomDialog
+          open={!!zoomImage}
+          onOpenChange={(open) => !open && setZoomImage(null)}
+          imageSrc={zoomImage?.src || ''}
+          imageAlt={zoomImage?.alt || ''}
+        />
+        
+        {/* Sticky Navigation */}
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'translate-y-0 bg-background/90 backdrop-blur-lg border-b border-border shadow-md' : '-translate-y-full'}`}>
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-16">
+              <button 
+                onClick={() => navigate('/')}
+                className="font-heading font-bold text-xl text-foreground hover:text-primary transition-colors"
+              >
+                Youssef Yasser
+              </button>
+              <Button 
+                variant="ghost" 
+                onClick={() => navigate('/')}
+              >
+                <ArrowLeft size={16} className="mr-2" />
+                Back to Portfolio
+              </Button>
+            </div>
+          </div>
+        </nav>
+
         {/* Hero Header with Cover Image */}
         <div className={`relative w-full ${isTeachlyProject ? 'h-[50vh] min-h-[400px] max-h-[600px] bg-gradient-to-br from-purple-600 via-purple-400 to-blue-400' : 'h-[50vh] min-h-[400px] max-h-[600px]'}`}>
           {isTeachlyProject ? (
@@ -752,7 +793,7 @@ const ProjectCaseStudy = () => {
                   // Lean UX Framework for VernX
                   <>
                     {/* Lean UX Diagram */}
-                    <div className="rounded-lg overflow-hidden shadow-md bg-white p-8">
+                    <div className="rounded-lg overflow-hidden shadow-md bg-white p-8 cursor-pointer hover:shadow-xl transition-shadow" onClick={() => handleImageClick((project as any).leanUxDiagram, 'Lean UX Framework')}>
                       <img
                         src={(project as any).leanUxDiagram}
                         alt="Lean UX Framework"
@@ -785,7 +826,7 @@ const ProjectCaseStudy = () => {
                     </div>
 
                     {/* Design Thinking Diagram */}
-                    <div className="rounded-lg overflow-hidden shadow-md bg-white p-8">
+                    <div className="rounded-lg overflow-hidden shadow-md bg-white p-8 cursor-pointer hover:shadow-xl transition-shadow" onClick={() => handleImageClick((project as any).research.image, 'Design Thinking Framework')}>
                       <img
                         src={(project as any).research.image}
                         alt="Design Thinking Framework"
@@ -842,7 +883,7 @@ const ProjectCaseStudy = () => {
                     </div>
 
                     {/* Double Diamond Diagram */}
-                    <div className="rounded-lg overflow-hidden shadow-md bg-white p-8">
+                    <div className="rounded-lg overflow-hidden shadow-md bg-white p-8 cursor-pointer hover:shadow-xl transition-shadow" onClick={() => handleImageClick(doubleDiamondImg, 'Double Diamond Framework')}>
                       <img
                         src={doubleDiamondImg}
                         alt="Double Diamond Framework"
@@ -1098,7 +1139,7 @@ const ProjectCaseStudy = () => {
                     <p className="text-foreground text-[19.5px] leading-[1.9] tracking-[0.25px] font-medium">
                       {(project as any).informationArchitecture.description}
                     </p>
-                    <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                    <div className="rounded-lg overflow-hidden shadow-md bg-background p-4 cursor-pointer hover:shadow-xl transition-shadow" onClick={() => handleImageClick((project as any).informationArchitecture.image, 'Information Architecture diagram')}>
                       <img
                         src={(project as any).informationArchitecture.image}
                         alt="Information Architecture diagram"
@@ -1117,7 +1158,7 @@ const ProjectCaseStudy = () => {
                     <p className="text-foreground text-[19.5px] leading-[1.9] tracking-[0.25px] font-medium">
                       {(project as any).userFlow.description}
                     </p>
-                    <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                    <div className="rounded-lg overflow-hidden shadow-md bg-background p-4 cursor-pointer hover:shadow-xl transition-shadow" onClick={() => handleImageClick((project as any).userFlow.image, 'User Flow diagram')}>
                       <img
                         src={(project as any).userFlow.image}
                         alt="User Flow diagram"
@@ -1136,7 +1177,7 @@ const ProjectCaseStudy = () => {
                     <p className="text-foreground text-[19.5px] leading-[1.9] tracking-[0.25px] font-medium">
                       {(project as any).taskFlow.description}
                     </p>
-                    <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                    <div className="rounded-lg overflow-hidden shadow-md bg-background p-4 cursor-pointer hover:shadow-xl transition-shadow" onClick={() => handleImageClick((project as any).taskFlow.image, 'Task Flow diagram')}>
                       <img
                         src={(project as any).taskFlow.image}
                         alt="Task Flow diagram"
@@ -1157,7 +1198,7 @@ const ProjectCaseStudy = () => {
                   <p className="text-foreground text-base mb-6">
                     This diagram illustrates the hierarchical structure of VernX's navigation, showing how users can access different sections from the home page and navigate to property details through the Rent and Buy options.
                   </p>
-                  <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                  <div className="rounded-lg overflow-hidden shadow-md bg-background p-4 cursor-pointer hover:shadow-xl transition-shadow" onClick={() => handleImageClick((project as any).informationArchitecture, 'Information Architecture diagram')}>
                     <img
                       src={(project as any).informationArchitecture}
                       alt="Information Architecture diagram"
@@ -1175,7 +1216,7 @@ const ProjectCaseStudy = () => {
                   <p className="text-foreground text-base mb-6">
                     The task flow outlines the step-by-step process users follow to complete key actions on VernX, from browsing properties to scheduling viewings or making inquiries.
                   </p>
-                  <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                  <div className="rounded-lg overflow-hidden shadow-md bg-background p-4 cursor-pointer hover:shadow-xl transition-shadow" onClick={() => handleImageClick((project as any).taskFlow, 'Task Flow diagram')}>
                     <img
                       src={(project as any).taskFlow}
                       alt="Task Flow diagram"
@@ -1194,7 +1235,7 @@ const ProjectCaseStudy = () => {
                   <p className="text-foreground text-base mb-6">
                     This flow maps the user's journey through VernX, highlighting decision points and interactions as they search, filter, and engage with property listings.
                   </p>
-                  <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                  <div className="rounded-lg overflow-hidden shadow-md bg-background p-4 cursor-pointer hover:shadow-xl transition-shadow" onClick={() => handleImageClick((project as any).userFlow.image, 'User Flow diagram')}>
                     <img
                       src={(project as any).userFlow.image}
                       alt="User Flow diagram"
@@ -1219,7 +1260,7 @@ const ProjectCaseStudy = () => {
                     <p className="text-foreground text-[19.5px] leading-[1.9] tracking-[0.25px] font-medium">
                       The flow starts with the authentication process, where users can log in using email or social accounts (Google, Apple, or Facebook), reset their password, or sign up for a new account.
                     </p>
-                    <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                    <div className="rounded-lg overflow-hidden shadow-md bg-background p-4 cursor-pointer hover:shadow-xl transition-shadow" onClick={() => handleImageClick(theraInfoArchImg, 'Information Architecture diagram showing app structure')}>
                       <img
                         src={theraInfoArchImg}
                         alt="Information Architecture diagram showing app structure"
@@ -1237,7 +1278,7 @@ const ProjectCaseStudy = () => {
                   <p className="text-foreground text-[19.5px] leading-[1.9] tracking-[0.25px] font-medium mb-6">
                     The flow includes the search of a specific doctor through filters; the choice of doctor and time slot and finally the checkout.
                   </p>
-                  <div className="rounded-lg overflow-hidden shadow-md">
+                  <div className="rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-xl transition-shadow" onClick={() => handleImageClick((project as any).userFlow.image, 'Task flow diagram showing booking journey')}>
                     <img
                       src={(project as any).userFlow.image}
                       alt="Task flow diagram showing booking journey"
@@ -1263,7 +1304,7 @@ const ProjectCaseStudy = () => {
                       <p className="text-foreground text-[19.5px] leading-[1.9] tracking-[0.25px] font-medium">
                         {wireframe.description}
                       </p>
-                      <div className="rounded-lg overflow-hidden shadow-md bg-background p-4">
+                      <div className="rounded-lg overflow-hidden shadow-md bg-background p-4 cursor-pointer hover:shadow-xl transition-shadow" onClick={() => handleImageClick(wireframe.image, `Wireframe ${index + 1}`)}>
                         <img
                           src={wireframe.image}
                           alt={`Wireframe ${index + 1}`}
@@ -1291,7 +1332,7 @@ const ProjectCaseStudy = () => {
                       <p className="text-foreground text-[19.5px] leading-[1.9] tracking-[0.25px] font-medium">
                         {screen.description}
                       </p>
-                      <div className="rounded-lg overflow-hidden shadow-md bg-background">
+                      <div className="rounded-lg overflow-hidden shadow-md bg-background cursor-pointer hover:shadow-xl transition-shadow" onClick={() => handleImageClick(screen.image, `High-fidelity UI ${index + 1}`)}>
                         <img
                           src={screen.image}
                           alt={`High-fidelity UI ${index + 1}`}
@@ -1315,7 +1356,7 @@ const ProjectCaseStudy = () => {
                   <h3 className="font-semibold text-xl text-foreground mb-4">Low Fidelity</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {(project as any).wireframes.low.map((wireframe: string, index: number) => (
-                      <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                      <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer" onClick={() => handleImageClick(wireframe, `Low fidelity wireframe ${index + 1}`)}>
                         <img
                           src={wireframe}
                           alt={`Low fidelity wireframe ${index + 1}`}
@@ -1339,7 +1380,7 @@ const ProjectCaseStudy = () => {
                   <h3 className="font-semibold text-xl text-foreground mb-4">High-fidelity Screens</h3>
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {(project as any).wireframes.high.map((screen: string, index: number) => (
-                      <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+                      <div key={index} className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow cursor-pointer" onClick={() => handleImageClick(screen, `High-fidelity screen ${index + 1}`)}>
                         <img
                           src={screen}
                           alt={`High-fidelity screen ${index + 1}`}

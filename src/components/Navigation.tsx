@@ -21,9 +21,6 @@ const Navigation = () => {
     label: 'Projects',
     href: '#projects'
   }, {
-    label: 'Skills',
-    href: '#skills'
-  }, {
     label: 'Experience',
     href: '#experience'
   }, {
