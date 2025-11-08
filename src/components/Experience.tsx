@@ -1,74 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Experience = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
-
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    let animationFrameId: number;
-    let scrollPosition = 0;
-    const scrollSpeed = 0.5;
-
-    const autoScroll = () => {
-      if (scrollContainer && !isDragging) {
-        scrollPosition += scrollSpeed;
-        
-        const maxScroll = scrollContainer.scrollWidth / 2;
-        if (scrollPosition >= maxScroll) {
-          scrollPosition = 0;
-        }
-        
-        scrollContainer.scrollLeft = scrollPosition;
-      }
-      animationFrameId = requestAnimationFrame(autoScroll);
-    };
-
-    animationFrameId = requestAnimationFrame(autoScroll);
-
-    const handleMouseEnter = () => cancelAnimationFrame(animationFrameId);
-    const handleMouseLeave = () => {
-      animationFrameId = requestAnimationFrame(autoScroll);
-    };
-
-    scrollContainer.addEventListener('mouseenter', handleMouseEnter);
-    scrollContainer.addEventListener('mouseleave', handleMouseLeave);
-
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-      scrollContainer?.removeEventListener('mouseenter', handleMouseEnter);
-      scrollContainer?.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }, [isDragging]);
-
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (!scrollRef.current) return;
-    setIsDragging(true);
-    setStartX(e.pageX - scrollRef.current.offsetLeft);
-    setScrollLeft(scrollRef.current.scrollLeft);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !scrollRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - scrollRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    scrollRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseLeave = () => {
-    setIsDragging(false);
-  };
-
   const experiences = [
     {
       title: 'UI/UX Designer Intern',
@@ -105,40 +37,29 @@ const Experience = () => {
           </h2>
         </div>
 
-        {/* Horizontal auto-scrolling experience cards */}
-        <div 
-          ref={scrollRef}
-          className={`overflow-x-auto pb-6 scrollbar-hide ${isDragging ? 'cursor-grabbing' : 'cursor-grab'} select-none`}
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="flex gap-6 min-w-max">
-            {/* Render cards twice for seamless loop */}
-            {[...experiences, ...experiences].map((experience, index) => (
-              <Card 
-                key={index} 
-                className="hover-lift bg-card border border-border shadow-md min-w-[320px] transition-all duration-300 hover:shadow-lg"
-              >
-                <CardContent className="p-6">
-                  <h3 className="font-heading font-semibold text-xl text-foreground mb-2">
-                    {experience.title}
-                  </h3>
-                  <p className="text-primary font-medium text-lg mb-1">
-                    {experience.company}
-                  </p>
-                  <p className="text-muted-foreground text-sm mb-1">
-                    {experience.period}
-                  </p>
-                  <p className="text-muted-foreground text-sm">
-                    {experience.location}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+        {/* Experience cards grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {experiences.map((experience, index) => (
+            <Card 
+              key={index} 
+              className="hover-lift bg-card border border-border shadow-md transition-all duration-300 hover:shadow-lg"
+            >
+              <CardContent className="p-6">
+                <h3 className="font-heading font-semibold text-xl text-foreground mb-2">
+                  {experience.title}
+                </h3>
+                <p className="text-primary font-medium text-lg mb-1">
+                  {experience.company}
+                </p>
+                <p className="text-muted-foreground text-sm mb-1">
+                  {experience.period}
+                </p>
+                <p className="text-muted-foreground text-sm">
+                  {experience.location}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
