@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Code, Target, Lightbulb, AlertCircle } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github, Users, Code, Target, Lightbulb, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
@@ -112,7 +112,6 @@ const ProjectCaseStudy = () => {
       subtitle: 'Luxury Real Estate Website',
       image: vernxCoverImg,
       category: 'UI/UX Design',
-      duration: '3 weeks',
       team: '1 designer',
       role: 'UI/UX Designer',
       technologies: ['Figma', 'Miro'],
@@ -253,7 +252,6 @@ const ProjectCaseStudy = () => {
       subtitle: 'Mental Health & Therapy App',
       image: theraImg,
       category: 'UI/UX Design',
-      duration: '4 months',
       team: '1 designer',
       role: 'UI/UX Designer',
       technologies: ['Figma', 'User Research', 'Prototyping', 'Usability Testing'],
@@ -357,7 +355,6 @@ const ProjectCaseStudy = () => {
       subtitle: 'Language Learning Platform Connecting Students with Tutors',
       image: teachlyImg,
       category: 'Education',
-      duration: '5 months',
       team: '1 designer',
       role: 'UI/UX Designer & Researcher',
       technologies: ['Figma', 'User Research', 'Prototyping', 'User Testing', 'Design Systems'],
@@ -530,7 +527,6 @@ const ProjectCaseStudy = () => {
       subtitle: 'Wellness App with Focus on Facial Yoga',
       image: yogaSkincareImg,
       category: 'Wellness',
-      duration: '2 months',
       team: '1 developer',
       role: 'UI/UX Designer & Flutter Developer',
       technologies: ['Flutter', 'UI/UX Design', 'Animation Libraries', 'Local Storage'],
@@ -556,7 +552,6 @@ const ProjectCaseStudy = () => {
       subtitle: 'Autonomous Vehicle Simulation & Drone Mapping',
       image: cyberPhysicalImg,
       category: 'Engineering',
-      duration: '6 months',
       team: '3 engineers',
       role: 'Systems Engineer & Simulation Specialist',
       technologies: ['MATLAB', 'Gazebo', 'RViz', 'ROS', 'Computer Vision'],
@@ -582,7 +577,6 @@ const ProjectCaseStudy = () => {
       subtitle: 'IoT Project with Arduino & Real-time Monitoring',
       image: temperatureSensorImg,
       category: 'IoT',
-      duration: '1 month',
       team: '1 developer',
       role: 'IoT Developer & Hardware Integration Specialist',
       technologies: ['Arduino', 'DS18B20 Sensor', 'C++', 'Data Logging', 'Serial Communication'],
@@ -608,7 +602,6 @@ const ProjectCaseStudy = () => {
       subtitle: 'Modern React Portfolio with Smooth Animations',
       image: portfolioWebsiteImg,
       category: 'Web Development',
-      duration: '2 weeks',
       team: '1 developer',
       role: 'Full-Stack Developer & Designer',
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Responsive Design'],
@@ -725,7 +718,6 @@ const ProjectCaseStudy = () => {
                 <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
                   {project.category}
                 </Badge>
-                <span className="text-sm text-white/90">{project.duration}</span>
               </div>
               
               <h1 className="font-heading font-bold text-4xl lg:text-6xl text-white mb-4">
@@ -1490,7 +1482,6 @@ const ProjectCaseStudy = () => {
           
           <div className="flex items-center gap-4 mb-4">
             <Badge variant="secondary">{project.category}</Badge>
-            <span className="text-sm text-muted-foreground">{project.duration}</span>
           </div>
           
           <h1 className="font-heading font-bold text-4xl lg:text-5xl text-foreground mb-4">
@@ -1585,13 +1576,6 @@ const ProjectCaseStudy = () => {
                 Project Details
               </h3>
               <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Calendar className="text-primary" size={16} />
-                  <div>
-                    <p className="text-sm text-muted-foreground">Duration</p>
-                    <p className="font-medium text-foreground">{project.duration}</p>
-                  </div>
-                </div>
                 <div className="flex items-center space-x-3">
                   <Users className="text-primary" size={16} />
                   <div>
