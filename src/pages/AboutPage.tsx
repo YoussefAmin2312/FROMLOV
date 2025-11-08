@@ -2,10 +2,8 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import aboutIntroImg from '@/assets/about-intro.jpg';
 import aboutPhilosophyImg from '@/assets/about-philosophy.jpg';
-
 const AboutPage = () => {
-  return (
-    <div className="min-h-screen bg-gradient-subtle">
+  return <div className="min-h-screen bg-gradient-subtle">
       <Navigation />
       
       <section className="py-20">
@@ -22,12 +20,7 @@ const AboutPage = () => {
             {/* Left Tall Image */}
             <div className="lg:col-span-3 order-2 lg:order-1">
               <div className="sticky top-24">
-                <img
-                  src={aboutIntroImg}
-                  alt="Youssef Yasser"
-                  className="w-full h-[600px] object-cover rounded-2xl shadow-elegant hover-lift"
-                  loading="eager"
-                />
+                <img src={aboutIntroImg} alt="Youssef Yasser" className="w-full h-[600px] object-cover rounded-2xl shadow-elegant hover-lift" loading="eager" />
               </div>
             </div>
 
@@ -67,7 +60,7 @@ const AboutPage = () => {
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
-                    <p className="text-lg text-foreground leading-relaxed">Heritage meets modern minimalism</p>
+                    <p className="text-lg text-foreground leading-relaxed">Traditonal ways meets modern minimalism</p>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0"></div>
@@ -80,12 +73,7 @@ const AboutPage = () => {
             {/* Right Tall Image */}
             <div className="lg:col-span-3 order-3">
               <div className="sticky top-24">
-                <img
-                  src={aboutPhilosophyImg}
-                  alt="Design Philosophy"
-                  className="w-full h-[600px] object-cover rounded-2xl shadow-elegant hover-lift"
-                  loading="eager"
-                />
+                <img src={aboutPhilosophyImg} alt="Design Philosophy" className="w-full h-[600px] object-cover rounded-2xl shadow-elegant hover-lift" loading="eager" />
               </div>
             </div>
           </div>
@@ -93,8 +81,6 @@ const AboutPage = () => {
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default AboutPage;
