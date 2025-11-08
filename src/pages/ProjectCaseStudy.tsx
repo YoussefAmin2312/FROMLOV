@@ -40,7 +40,7 @@ import theraHighScreen7 from '@/assets/thera-high-screen-7.png';
 import theraHighScreen8 from '@/assets/thera-high-screen-8.png';
 import theraHighScreen9 from '@/assets/thera-high-screen-9.png';
 import theraHighScreen10 from '@/assets/thera-high-screen-10.png';
-import theraInfoArchImg from '@/assets/thera-information-architecture.png';
+import theraInfoArchImg from '@/assets/thera-information-architecture-new.png';
 import teachlyWireframeLow1 from '@/assets/teachly-wireframe-low-1.png';
 import teachlyWireframeLow2 from '@/assets/teachly-wireframe-low-2.png';
 import teachlyWireframeLow3 from '@/assets/teachly-wireframe-low-3.png';
