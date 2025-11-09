@@ -1386,8 +1386,8 @@ const ProjectCaseStudy = () => {
                   <iframe 
                     style={{ border: 'none' }} 
                     width="100%" 
-                    height="800" 
-                    src="https://embed.figma.com/proto/7UPul8PJEAA3bzqQhhRcYE/Untitled?page-id=0%3A1&node-id=155-393&viewport=438%2C-633%2C0.5&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5%3A3&show-proto-sidebar=1&embed-host=share" 
+                    height="1000" 
+                    src="https://embed.figma.com/proto/7UPul8PJEAA3bzqQhhRcYE/Untitled?page-id=0%3A1&node-id=155-393&viewport=438%2C-633%2C1.2&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5%3A3&show-proto-sidebar=1&embed-host=share" 
                     allowFullScreen
                   />
                 </div>
