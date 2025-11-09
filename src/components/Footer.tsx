@@ -14,12 +14,12 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <Linkedin size={20} />,
-      href: 'https://linkedin.com', // Will be updated with user's LinkedIn URL
+      href: 'https://www.linkedin.com/in/amin-yyoussef/',
       label: 'LinkedIn',
     },
     {
       icon: <Mail size={20} />,
-      href: 'mailto:youssef.yasser.1408@gmail.com',
+      href: 'https://mail.google.com/mail/?view=cm&fs=1&to=youssef.yasser.1408@gmail.com',
       label: 'Email',
     },
   ];
