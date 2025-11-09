@@ -109,16 +109,10 @@ const Footer = () => {
 
         {/* Divider */}
         <div className="border-t border-background/20 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row justify-center items-center">
             <p className="text-background/60 text-sm">
               © {currentYear} Youssef Yasser. All rights reserved.
             </p>
-            
-            <div className="flex items-center space-x-2 text-background/60 text-sm">
-              <span>Made with</span>
-              <Heart size={16} className="text-red-400 animate-pulse" />
-              <span>and lots of code</span>
-            </div>
           </div>
         </div>
       </div>
