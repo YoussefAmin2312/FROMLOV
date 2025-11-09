@@ -1382,12 +1382,12 @@ const ProjectCaseStudy = () => {
                 <p className="text-foreground text-[19.5px] leading-[1.9] tracking-[0.25px] font-medium mb-8">
                   Explore the interactive Figma prototype to experience the complete user flow and interactions designed for Teachly.
                 </p>
-                <div className="rounded-lg overflow-hidden shadow-xl bg-background border border-border">
+                <div className="rounded-lg overflow-hidden shadow-xl bg-background border border-border flex justify-center items-center py-8">
                   <iframe 
-                    style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }} 
+                    style={{ border: 'none' }} 
                     width="100%" 
-                    height="600" 
-                    src="https://embed.figma.com/proto/7UPul8PJEAA3bzqQhhRcYE/Untitled?page-id=0%3A1&node-id=155-393&viewport=438%2C-633%2C0.25&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5%3A3&show-proto-sidebar=1&embed-host=share" 
+                    height="800" 
+                    src="https://embed.figma.com/proto/7UPul8PJEAA3bzqQhhRcYE/Untitled?page-id=0%3A1&node-id=155-393&viewport=438%2C-633%2C0.5&scaling=scale-down&content-scaling=fixed&starting-point-node-id=5%3A3&show-proto-sidebar=1&embed-host=share" 
                     allowFullScreen
                   />
                 </div>
