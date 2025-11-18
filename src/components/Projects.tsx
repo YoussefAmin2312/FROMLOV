@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import vernxCoverImg from '@/assets/vernx-cover.jpg';
+import multipwrCoverImg from '@/assets/multipwr-cover.jpg';
 import theraImg from '@/assets/thera-project.png';
 import teachlyImg from '@/assets/teachly-project.jpg';
 const Projects = () => {
@@ -20,7 +20,7 @@ const Projects = () => {
     id: 'multipwr',
     title: 'MultiPWR',
     description: 'AI-powered productivity platform combining email generation, grammar checking, and meeting notes',
-    image: vernxCoverImg,
+    image: multipwrCoverImg,
     category: 'UI/UX Design'
   }];
   const handleProjectClick = (projectId: string) => {
