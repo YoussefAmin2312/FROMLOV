@@ -45,6 +45,11 @@ import theraInfoArchImg from '@/assets/thera-information-architecture-new.png';
 import multipwrInfoArchImg from '@/assets/multipwr-information-architecture.png';
 import multipwrUserFlowImg from '@/assets/multipwr-user-flow.png';
 import multipwrTaskFlowImg from '@/assets/multipwr-task-flow.png';
+import multipwrHighScreen1 from '@/assets/multipwr-high-screen-1.png';
+import multipwrHighScreen2 from '@/assets/multipwr-high-screen-2.png';
+import multipwrHighScreen3 from '@/assets/multipwr-high-screen-3.png';
+import multipwrHighScreen4 from '@/assets/multipwr-high-screen-4.png';
+import multipwrHighScreen5 from '@/assets/multipwr-high-screen-5.png';
 import teachlyWireframeLow1 from '@/assets/teachly-wireframe-low-1.png';
 import teachlyWireframeLow2 from '@/assets/teachly-wireframe-low-2.png';
 import teachlyWireframeLow3 from '@/assets/teachly-wireframe-low-3.png';
@@ -141,6 +146,28 @@ const ProjectCaseStudy = () => {
       userFlow: {
         image: multipwrUserFlowImg
       },
+      highFidelityScreens: [
+        {
+          image: multipwrHighScreen1,
+          description: 'Landing page showcasing the three core AI tools: Mail AI for professional email generation, Live Translator AI for real-time multilingual translation, and Remind AI for smart scheduling.'
+        },
+        {
+          image: multipwrHighScreen2,
+          description: 'Productivity kit overview with WriteMail.ai feature demonstrating email composition with key points input, template selection, and automated email generation.'
+        },
+        {
+          image: multipwrHighScreen3,
+          description: 'Meeting.ai interface showing language selection from 30+ languages and the note-taking workflow with automatic transcription and recording capabilities.'
+        },
+        {
+          image: multipwrHighScreen4,
+          description: 'Pricing structure presenting three tiers: Standard (Free) for personal work, Pro ($10) for solo users, and Business ($20) for small teams with advanced collaboration features.'
+        },
+        {
+          image: multipwrHighScreen5,
+          description: 'Contact page with two support channels: sales and help & support, both offering early access to the Superhuman suite for Enterprise customers.'
+        }
+      ],
       persona: {
         name: 'Omar Hassan',
         age: 22,
