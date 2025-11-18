@@ -146,7 +146,7 @@ const ProjectCaseStudy = () => {
       userFlow: {
         image: multipwrUserFlowImg
       },
-      highFidelityScreens: [
+      highFidelityUI: [
         {
           image: multipwrHighScreen1,
           description: 'Landing page showcasing the three core AI tools: Mail AI for professional email generation, Live Translator AI for real-time multilingual translation, and Remind AI for smart scheduling.'
@@ -185,12 +185,6 @@ const ProjectCaseStudy = () => {
           'Unclear feature descriptions and hidden limitations'
         ]
       },
-      highFidelityUI: [
-        {
-          description: 'Homepage design featuring the main AI tool options.',
-          image: vernxCoverImg
-        }
-      ],
       usabilityTesting: {
         description: 'I conducted usability tests with three participants to evaluate the platform\'s ease of use and clarity.',
         findings: [
