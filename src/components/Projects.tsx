@@ -32,7 +32,7 @@ const Projects = () => {
           <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-6">Work</h2>
           <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A showcase of my work spanning mobile development, AI integration, IoT systems, and user experience design.
+            A showcase of my UI/UX design work, creating intuitive and engaging user experiences.
           </p>
         </div>
 
