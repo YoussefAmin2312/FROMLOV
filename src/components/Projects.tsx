@@ -11,17 +11,17 @@ const Projects = () => {
     image: teachlyImg,
     category: 'Education'
   }, {
-    id: 'thera',
-    title: 'Thera',
-    description: 'Find your therapist - Mental health therapy app',
-    image: theraImg,
-    category: 'Healthcare'
-  }, {
     id: 'multipwr',
     title: 'MultiPWR',
     description: 'AI-powered productivity platform combining email generation, grammar checking, and meeting notes',
     image: multipwrCoverImg,
     category: 'UI/UX Design'
+  }, {
+    id: 'thera',
+    title: 'Thera',
+    description: 'Find your therapist - Mental health therapy app',
+    image: theraImg,
+    category: 'Healthcare'
   }];
   const handleProjectClick = (projectId: string) => {
     navigate(`/project/${projectId}`);
