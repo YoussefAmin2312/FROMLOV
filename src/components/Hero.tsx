@@ -37,7 +37,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-16 fade-in-delay-3">
             <Button asChild size="lg" className="bg-white/10 border-2 border-white text-white backdrop-blur-sm hover:bg-white/20 hover:text-white hover:scale-105 transition-all duration-300 font-semibold px-8 py-3 text-lg shadow-lg">
-              <a href="https://drive.google.com/uc?export=download&id=1_7iSl-xgC5aIWBTcBeJiFxndLThW7TYW" download="Youssef_Yasser_Resume.pdf" className="inline-flex items-center gap-2">
+              <a href="https://drive.google.com/uc?export=download&id=1XEllYypZs2UoznEDjtleIBsd16wAQl8Z" download="Youssef_Yasser_Resume.pdf" className="inline-flex items-center gap-2">
                 <Download size={20} />
                 Download Resume
               </a>
