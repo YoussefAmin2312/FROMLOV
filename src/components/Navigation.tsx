@@ -56,17 +56,17 @@ const Navigation = () => {
     }
     setIsMobileMenuOpen(false);
   };
-  return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || !isHomePage ? 'bg-background/90 backdrop-blur-lg border-b border-border shadow-md' : 'bg-transparent'}`}>
+  return <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || !isHomePage ? 'bg-background/90 backdrop-blur-lg border-b border-border shadow-md' : 'bg-background/50 backdrop-blur-sm'}`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <button onClick={() => handleNavClick('#home')} className={`font-heading font-bold text-xl transition-colors ${isScrolled || !isHomePage ? 'text-foreground' : 'text-slate-50'}`}>
+          <button onClick={() => handleNavClick('#home')} className="font-heading font-bold text-xl transition-colors text-foreground hover:text-primary">
             Youssef Yasser
           </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map(item => <button key={item.label} onClick={() => handleNavClick(item.href)} className={`transition-colors font-medium relative group ${isScrolled || !isHomePage ? 'text-foreground hover:text-primary' : 'text-slate-50'}`}>
+            {navItems.map(item => <button key={item.label} onClick={() => handleNavClick(item.href)} className="transition-colors font-medium relative group text-foreground hover:text-primary">
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </button>)}
